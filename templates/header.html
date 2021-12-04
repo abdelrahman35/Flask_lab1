@@ -1,0 +1,24 @@
+<header class="app-header">
+  <nav class="navbar navbar-expand-md navbar-dark bg-secondary fixed-top">
+    <a class="navbar-brand mr-4" style="margin-left: 5px" href="/">Todo App </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarToggle"
+      aria-controls="navbarToggle"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarToggle">
+      <div class="navbar-nav mr-auto">
+        <a class="nav-item nav-link" href="{{ url_for('index')}}">Home</a>
+        <a class="nav-item nav-link" href="{{ url_for('create_todo')}}"
+          >Add Todo</a
+        >
+      </div>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,54 @@
+{% extends "base.html" %} {%block body%}
+<title>{% block title %}Add TODO{%endblock title%}</title>
+<form
+  method="POST"
+  ,
+  action="{% if todo%} {{url_for('edit_todo', id=todo.id)}}{% else %}{{url_for('create_todo')}}{%endif%}"
+  class="form"
+>
+  <div class="form-group">
+    <label for="titleid">Title</label>
+    {% if todo %}
+    <input
+      value="{{todo.title}}"
+      name="title"
+      type="text"
+      class="form-control"
+      id="titleid"
+      placeholder="Enter title"
+    />
+    {% else %}
+    <input
+      name="title"
+      type="text"
+      class="form-control"
+      id="titleid"
+      placeholder="Enter title"
+    />
+    {% endif %}
+  </div>
+  <div class="form-group">
+    <label for="descriptionid">Description</label>
+    {% if todo %}
+    <input
+      value="{{todo.description}}"
+      name="description"
+      type="text"
+      class="form-control"
+      id="descriptionid"
+      placeholder="Description"
+    ></input>
+    {% else %}
+    <input
+      name="description"
+      type="text"
+      class="form-control"
+      id="descriptionid"
+      placeholder="Description"
+    ></input>
+    {% endif %}
+  </div>
+  <br />
+  <input name="create" type="submit" class="btn btn-primary" />
+</form>
+{%endblock%}
