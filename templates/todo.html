@@ -1,9 +1,26 @@
 {% extends "base.html" %} {% block body %}
 <article class="media content-section">
   <div class="media-body">
-    <div class="article-metadata"></div>
-    <h2 class="article-title">{{ todo.title }}</h2>
-    <p class="article-content">{{ todo.description }}</p>
+    <a
+    class="btn btn-success "
+    style="align-items: flex-end"
+    href="{{url_for ('index')}}"
+    >&#8592;</a
+    <div>
+      <h2 class="article-title"> {{ todo.title }}</h2>
+      <hr>
+      <h6 class="btn btn-light">Description:</h3>
+      <p class="article-content">{{ todo.description }}</p>
+    </div><hr>
+    <div class="d-flex">
+        
+      <a
+        class="btn btn-primary w-100"
+        style="align-items: flex-end"
+        href="{{url_for ('edit_todo',id=todo.id)}}"
+        >Edit</a
+      >
+    </div>
   </div>
 </article>
 <!-- Modal -->

@@ -1,6 +1,8 @@
 <header class="app-header">
-  <nav class="navbar navbar-expand-md navbar-dark bg-secondary fixed-top">
-    <a class="navbar-brand mr-4" style="margin-left: 5px" href="/">Todo App </a>
+  <nav class="navbar nav-tabs navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand mr-4" style="margin-left: 5px" href="/home"
+      >Todo App
+    </a>
     <button
       class="navbar-toggler"
       type="button"
@@ -13,12 +15,22 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarToggle">
+      {% if current_user.is_authenticated %}
+
       <div class="navbar-nav mr-auto">
-        <a class="nav-item nav-link" href="{{ url_for('index')}}">Home</a>
+        <a class="nav-item nav-link" href="{{ url_for('index')}}">Tasks</a>
         <a class="nav-item nav-link" href="{{ url_for('create_todo')}}"
-          >Add Todo</a
+          >Add Task</a
         >
       </div>
+      <a
+        class="btn btn-danger"
+        style="color: white"
+        href="{{url_for('logout')}}"
+        >Logout</a
+      >
+
+      {% endif %}
     </div>
   </nav>
 </header>
